@@ -14,29 +14,27 @@ This tool dumps the data of Salesforce object through Aura lightning endpoint wi
 # Usage
 ```
 $ python3 exploit.py -h
-usage: exploit.py [-h] -u URL [-o [OBJECTS [OBJECTS ...]]] [-l] [-c]
-                  [-a AURA_CONTEXT] [-r RECORD_ID] [-d] [-f] [-s]
+usage: exploit.py [-h] -u URL [-o [OBJECTS ...]] [-l] [-c] [-a AURA_CONTEXT] [-t AURA_TOKEN] [-k COOKIES] [-r RECORD_ID] [-d] [-f] [-s]
 
 Exploit Salesforce through the aura endpoint with the guest privilege
 
-optional arguments:
+options:
   -h, --help            show this help message and exit
   -u URL, --url URL     set the SITE url. e.g. http://url/site_path
-  -o [OBJECTS [OBJECTS ...]], --objects [OBJECTS [OBJECTS ...]]
-                        set the object name. Default value is "User" object.
-                        Juicy Objects: Case,Account,User,Contact,Document,Cont
-                        entDocument,ContentVersion,ContentBody,CaseComment,Not
-                        e,Employee,Attachment,EmailMessage,CaseExternalDocumen
-                        t,Attachment,Lead,Name,EmailTemplate,EmailMessageRelat
-                        ion
+  -o [OBJECTS ...], --objects [OBJECTS ...]
+                        set the object name. Default value is "User" object. Juicy Objects: Case,Account,User,Contact,Document,ContentDocument,ContentVersion,ContentBody,CaseComment,Note,E
+                        mployee,Attachment,EmailMessage,CaseExternalDocument,Attachment,Lead,Name,EmailTemplate,EmailMessageRelation
   -l, --listobj         pull the object list.
   -c, --check           only check aura endpoint
   -a AURA_CONTEXT, --aura_context AURA_CONTEXT
                         set your valid aura_context
+  -t AURA_TOKEN, --aura_token AURA_TOKEN
+                        set your valid aura_token
+  -k COOKIES, --cookies COOKIES
+                        set your valid cookies
   -r RECORD_ID, --record_id RECORD_ID
                         set the recode id to dump the record
-  -d, --dump_objects    dump a small number of objects accessible to guest
-                        users and saves them in the file.
+  -d, --dump_objects    dump a small number of objects accessible to guest users and saves them in the file.
   -f, --full            if set with -d, dump all pages of objects.
   -s, --skip            if set with -d, skip the objects already dumped.
 ```
